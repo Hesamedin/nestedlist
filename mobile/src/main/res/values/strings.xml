@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Telus</string>
+
+    <string name="cd_logo">Telus Logo</string>
+    <string name="cd_movie_poster">Movie Poster Image</string>
+
+    <string name="toolbar_title">Android Demo App</string>
+    <string name="play">Play</string>
+    <string name="back">Back</string>
+</resources>

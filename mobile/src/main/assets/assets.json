@@ -1,0 +1,202 @@
+[
+	{
+		"id":"tams20181",
+		"title":"Red Sparrow",
+		"description":"Ballerina Dominika Egorova is recruited to Sparrow School, a Russian intelligence service where she is forced to use her body as a weapon. Her first mission, targeting a C.I.A. agent, threatens to unravel the security of both nations.",
+		"rating":"18+",
+		"length": "90",
+		"year":"2018",
+		"poster":"sparrow.jpg",
+		"category":"Action"
+	},
+	{
+		"id":"tams20182",
+		"title":"Karate Kid",
+		"description":"Work causes a single mother to move to China with her young son; in his new home, the boy embraces kung fu, taught to him by a master.",
+		"rating":"13+",
+		"length": "100",
+		"year":"2010",
+		"poster":"karate_kid.jpg",
+		"category":"Kids"
+	},
+	{
+		"id":"tams20183",
+		"title":"127 Hours",
+		"description":"An adventurous mountain climber becomes trapped under a boulder while canyoneering alone near Moab, Utah and resorts to desperate measures in order to survive.",
+		"rating":"13+",
+		"length": "75",
+		"year":"2010",
+		"poster":"hours_127.jpg",
+		"category":"Thriller"
+	},
+	{
+		"id":"tams20184",
+		"title":"Case 39",
+		"description":"A social worker fights to save a girl from her abusive parents, only to discover that the situation is more dangerous than she ever expected.",
+		"rating":"14+",
+		"length": "65",
+		"year":"2009",
+		"poster":"case_39.jpg",
+		"category":"Thriller"
+	},
+	{
+		"id":"tams20185",
+		"title":"24 Legacy",
+		"description":"A military hero who returns to the U.S. with a whole lot of trouble following him back. With nowhere else to turn, the man asks CTU to help him save his life while also stopping one of the largest-scale terror attacks on American soil.",
+		"rating":"13+",
+		"length": "100",
+		"year":"2016",
+		"poster":"legacy_24.jpg",
+		"category":"Action"
+	},
+	{
+		"id":"tams20186",
+		"title":"Area 51",
+		"description":"Three young conspiracy theorists attempt to uncover the mysteries of Area 51, the governments secret location rumored to have hosted encounters with alien beings. What they find at this hidden facility exposes unimaginable secrets.",
+		"rating":"PG",
+		"length": "100",
+		"year":"2015",
+		"poster":"area_51.jpg",
+		"category":"Action"
+	},
+	{
+		"id":"tams20187",
+		"title":"Big Hero 6",
+		"description":"The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+		"rating":"PG",
+		"length": "90",
+		"year":"2014",
+		"poster":"big_hero_6.jpg",
+		"category":"Kids"
+	},
+	{
+		"id":"tams20188",
+		"title":"Deadpool",
+		"description":"A fast-talking mercenary with a morbid sense of humor is subjected to a rogue experiment that leaves him with accelerated healing powers and a quest for revenge.",
+		"rating":"PG",
+		"length": "66",
+		"year":"2016",
+		"poster":"deadpool.jpg",
+		"category":"Action"
+	},
+	{
+		"id":"tams20189",
+		"title":"Night Crawler",
+		"description":"Blood is thicker than water in this tiny Texas town. After two centuries of Vampire blood lust one man becomes a hero...without a clue.",
+		"rating":"18+",
+		"length": "35",
+		"year":"2009",
+		"poster":"night_crawler.jpg",
+		"category":"Thriller"
+	},
+	{
+		"id":"tams201810",
+		"title":"Mind Hunter",
+		"description":"In the late 1970s two FBI agents expand criminal science by delving into the psychology of murder and getting uneasily close to all-too-real monsters.",
+		"rating":"14+",
+		"length": "45",
+		"year":"2017",
+		"poster":"mindhunter.jpg",
+		"category":"Series"
+	},
+	{
+		"id":"tams201811",
+		"title":"The Shape of Water",
+		"description":"A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.",
+		"rating":"14+",
+		"length": "125",
+		"year":"2017",
+		"poster":"the_shape_of_water.jpg",
+		"category":"Thriller"
+	},
+	{
+		"id":"tams201812",
+		"title":"Lucy",
+		"description":"",
+		"rating":"PG",
+		"length": "125",
+		"year":"2014",
+		"poster":"lucy.jpg",
+		"category":"Action"
+	},
+	{
+		"id":"tams201813",
+		"title":"Saving Mr. Bank",
+		"description":"TV SHOW",
+		"rating":"PG",
+		"length": "90",
+		"year":"2013",
+		"poster":"saving_mr_bank.jpg",
+		"category":"Family"
+	},
+	{
+		"id":"tams201814",
+		"title":"Maze Runner - Death Cure",
+		"description":"Young hero Thomas embarks on a mission to find a cure for a deadly disease known as - The Flare",
+		"rating":"PG",
+		"length": "120",
+		"year":"2018",
+		"poster":"mazerunner_death_cure.jpg",
+		"category":"Kids"
+	},
+	{
+		"id":"tams201815",
+		"title":"12 Years a Slave",
+		"description":"",
+		"rating":"PG",
+		"length": "100",
+		"year":"2013",
+		"poster":"years_12.jpg",
+		"category":"Family"
+	},
+	{
+		"id":"tams201816",
+		"title":"Shark Night",
+		"description":"Wildlife documentary following naturalist Mike Rutzen as he immerses himself in shark-infested waters around the world.",
+		"rating":"PG",
+		"length": "100",
+		"year":"2010",
+		"poster":"shark_night.jpg",
+		"category":"Kids"
+	},
+	{
+		"id":"tams201817",
+		"title":"Alien",
+		"description":"After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.",
+		"rating":"18+",
+		"length": "109",
+		"year":"1979",
+		"poster":"alien.jpg",
+		"category":"Thriller"
+	},
+	{
+		"id":"tams201818",
+		"title":"Jigsaw",
+		"description":"Bodies are turning up around the city, each having met a uniquely gruesome demise. As the investigation proceeds, evidence points to one suspect: John Kramer, the man known as Jigsaw, who has been dead for over 10 years.",
+		"rating":"18+",
+		"length": "90",
+		"year":"2017",
+		"poster":"jigsaw.jpg",
+		"category":"Thriller"
+	},
+	{
+		"id":"tams201819",
+		"title":"Black Swan",
+		"description":"A committed dancer wins the lead role in a production of Tchaikovsky's Swan Lake only to find herself struggling to maintain her sanity.",
+		"rating":"13+",
+		"length": "80",
+		"year":"2010",
+		"poster":"black_swan.jpg",
+		"category":"Family"
+	},
+	{
+		"id":"tams201820",
+		"title":"The Miracle Season",
+		"description":"After the tragic death of star volleyball player Caroline Line Found, a team of dispirited high school girls must band together under the guidance of their tough-love coach in hopes of winning the state championship.",
+		"rating":"PG",
+		"length": "100",
+		"year":"2018",
+		"poster":"the_miracle_season.jpg",
+		"category":"Family"
+	}
+]
