@@ -6,13 +6,16 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import com.telus.R
 import com.telus.screens.movieDetail.MovieDetailActivity
 import com.telus.screens.movieList.model.Movie
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.subjects.PublishSubject
 import timber.log.Timber
 import java.util.SortedMap
 
-class MainActivity : AppCompatActivity(), HorizontalRecyclerAdapter.OnItemClickListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var mRecyclerView: RecyclerView
 
@@ -38,19 +41,24 @@ class MainActivity : AppCompatActivity(), HorizontalRecyclerAdapter.OnItemClickL
         mRecyclerView.setHasFixedSize(false)
         val layoutManager = LinearLayoutManager(this)
         mRecyclerView.layoutManager = layoutManager
-
     }
 
     private fun displayData(sortedList: SortedMap<String, List<Movie>>) {
         sortedList.forEach { t, u ->  Timber.d(">> $t - ${u.forEach { it.title }}")}
 
-        val adapter = VerticalRecyclerAdapter(sortedList)
-        mRecyclerView.adapter = adapter
-        adapter.setOnItemClickListener(this)
-    }
+        val onClickMovieSubject = PublishSubject.create<Pair<View, Movie?>>()
+        onClickMovieSubject
+                .subscribeBy {
+                    val movie = it.second
+                    if (movie == null) {
+                        Timber.e("Movie should not be null!")
+                        return@subscribeBy
+                    }
 
-    override fun onItemClick(movie: Movie) {
-        Timber.d(movie.toString())
-        MovieDetailActivity.start(this, movie)
+                    Timber.d(movie.toString())
+                    MovieDetailActivity.start(this, movie)
+                }
+        val adapter = VerticalRecyclerAdapter(sortedList, onClickMovieSubject)
+        mRecyclerView.adapter = adapter
     }
 }

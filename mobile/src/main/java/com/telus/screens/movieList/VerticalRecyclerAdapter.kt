@@ -10,20 +10,16 @@ import android.util.SparseIntArray
 import android.widget.TextView
 import com.telus.R
 import com.telus.screens.movieList.model.Movie
+import io.reactivex.subjects.Subject
 import java.util.SortedMap
 
-class VerticalRecyclerAdapter(private val sortedList: SortedMap<String, List<Movie>>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class VerticalRecyclerAdapter(
+        private val sortedList: SortedMap<String, List<Movie>>,
+        val onMovieClickSubject: Subject<Pair<View, Movie?>>
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var mContext: Context
-    private lateinit var mItemClickListener: HorizontalRecyclerAdapter.OnItemClickListener
     private val listPosition: SparseIntArray = SparseIntArray()
-
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        mContext = viewGroup.context
-
-        val v1 = LayoutInflater.from(mContext).inflate(R.layout.detail_list_item_vertical, viewGroup, false)
-        return CellViewHolder(v1)
-    }
 
     override fun getItemCount(): Int {
         return sortedList.keys.size
@@ -31,24 +27,19 @@ class VerticalRecyclerAdapter(private val sortedList: SortedMap<String, List<Mov
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
 
-        val layoutManager = LinearLayoutManager(mContext)
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-
-        val cellViewHolder = viewHolder as CellViewHolder
-        cellViewHolder.mRecyclerView.setHasFixedSize(true)
-        cellViewHolder.mRecyclerView.layoutManager = layoutManager
-
         val keys = ArrayList<String>(5)
         sortedList.forEach { t, _ -> keys.add(t) }
         val key: String = keys[position]
-        cellViewHolder.mCategory.text = key
-        val adapter = HorizontalRecyclerAdapter(sortedList.getValue(key))
-        cellViewHolder.mRecyclerView.adapter = adapter
-        adapter.setOnItemClickListener(mItemClickListener)
-        val lastSeenFirstPosition = listPosition.get(position, 0)
-        if (lastSeenFirstPosition >= 0) {
-            cellViewHolder.mRecyclerView.scrollToPosition(lastSeenFirstPosition)
-        }
+
+        val cellViewHolder = viewHolder as CellViewHolder
+        cellViewHolder.bindView(key, sortedList.getValue(key), position)
+    }
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        mContext = viewGroup.context
+
+        val v1 = LayoutInflater.from(mContext).inflate(R.layout.detail_list_item_vertical, viewGroup, false)
+        return CellViewHolder(v1)
     }
 
     override fun onViewRecycled(viewHolder: RecyclerView.ViewHolder) {
@@ -61,13 +52,27 @@ class VerticalRecyclerAdapter(private val sortedList: SortedMap<String, List<Mov
         super.onViewRecycled(viewHolder)
     }
 
-    fun setOnItemClickListener(mItemClickListener: HorizontalRecyclerAdapter.OnItemClickListener) {
-        this.mItemClickListener = mItemClickListener
-    }
-
-    private class CellViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    inner class CellViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mRecyclerView: RecyclerView = itemView.findViewById(R.id.recyclerView) as RecyclerView
-        val mCategory: TextView = itemView.findViewById(R.id.tvCategory) as TextView
+        private val mCategory: TextView = itemView.findViewById(R.id.tvCategory) as TextView
+
+        fun bindView(category: String, movies: List<Movie>, position: Int) {
+            val layoutManager = LinearLayoutManager(mContext)
+            layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
+            mRecyclerView.setHasFixedSize(true)
+            mRecyclerView.layoutManager = layoutManager
+
+            with(itemView) {
+                mCategory.text = category
+                val adapter = HorizontalRecyclerAdapter(movies, this@VerticalRecyclerAdapter.onMovieClickSubject)
+                mRecyclerView.adapter = adapter
+
+                val lastSeenFirstPosition = listPosition.get(position, 0)
+                if (lastSeenFirstPosition >= 0) {
+                    mRecyclerView.scrollToPosition(lastSeenFirstPosition)
+                }
+            }
+        }
     }
 }
